@@ -1,0 +1,51 @@
+{% extends 'layout.html' %}
+
+{% block title %}<title>Throw Emoji</title>{% endblock %}
+
+{% block body %}
+
+    <div class="jumbotron container" style="margin-top: 100px; border: 2em;">
+        <div class="navBar">
+            
+        </div>
+
+        <h1 class="container text-center" style="color: blueviolet">
+            {% if emojies %}
+            THROW EM{{ emojies[0] }}JIES
+            {% else %}
+            THROW EMOJIES
+            {% endif %}            
+        </h1>
+
+        <div class="numberOfEmojies">
+
+        </div>
+
+        <div class="emotionScale jumbotron">
+            <form method="POST" action="" class="container">
+                <div class="form-group">
+                    <label for="formControlRange">How do you feel</label>
+                    <br>
+                    <input type="range" class="form-control-range" name="name">
+                    <br>
+                    <input type="submit" value="Submit" name="submit" class="btn btn-warning text-center" style="width: 120px; margin-left: 44%;"/>
+                    <br>
+                    <div class="container text-center">
+                    {% if value %}
+                    {{ value }}
+                    {% endif %}
+                    </div>
+                </div>
+            </form>
+        </div>
+
+        <div>
+            {{ sliderValue }}
+        </div>
+
+        <div class="container text-center" style="height: 50px;">
+            <h3> {{ emojies }} </h3>
+        </div>
+    </div>
+
+{% endblock %}
